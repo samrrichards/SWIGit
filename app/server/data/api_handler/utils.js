@@ -144,7 +144,3 @@ module.exports = {
 
 
 };
-	
-
-
->>>>>>> (Feat) Signup creates storage folder for user's posts, posts are written to seperate files inside the user's folder, currently filenames are the blog posts' titles
