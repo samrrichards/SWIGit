@@ -7,9 +7,7 @@ const Post = require('../models/Post.js');
 const User = require('../models/User.js');
 const SubUtils = require('./subutils/subutils.js');
 
-
 module.exports = {
-
 	createUserProfile: function(req, res) {
 		const username = req.body.username;
 		const password = req.body.password;
@@ -121,3 +119,32 @@ module.exports = {
 
 };
 	
+	createUserFolder: function(req, res) {
+		const author = req.body.author;
+		let blogPostsPath = path.join(__dirname,'../blog_posts/');
+		fs.mkdir(path.join(blogPostsPath, author));
+
+	},
+
+	publish: function(req,res) {
+		const author = req.body.author;
+		const title = req.body.title;
+		const text = req.body.text;
+		const userPath = path.join(__dirname,'../blog_posts', author);
+		fs.writeFile(path.join(userPath, title + '.txt'), text, 'utf-8', function(err){
+			if (err) {
+				console.log(err)
+			}
+			else {
+				res.sendStatus(200);
+			}
+		});
+	}
+
+
+
+};
+	
+
+
+>>>>>>> (Feat) Signup creates storage folder for user's posts, posts are written to seperate files inside the user's folder, currently filenames are the blog posts' titles
