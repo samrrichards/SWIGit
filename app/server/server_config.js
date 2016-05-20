@@ -1,4 +1,4 @@
-"use strict";  //es2015 ahead!!
+"use strict"; 
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -9,12 +9,17 @@ const route = require('./route/route_config');
 
 const app = express();
 
-app.use(express.static(route.path.root));   // static resoureces
+app.use(express.static(route.path.root));  
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-app.get('/*', route.serve.index); // serve index.html for all requests
+
+app.get('/*', route.serve.index); 
+
+app.post('/_/api', route.utils.publish);
+
+app.post('/signup', route.utils.signup)
 
 //Sam comment - I think the above code does the same thing as this: 
 
