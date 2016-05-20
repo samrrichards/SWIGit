@@ -1,5 +1,7 @@
 "use strict";
 
+const app = require('../server_config.js');
+>>>>>>> (fix) adding files to prepare for rebase
 const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -46,4 +48,6 @@ exports.utils = {
     Utils.delete_post(req, res);
   }
 }
+module.exports;
+>>>>>>> (fix) adding files to prepare for rebase
 
