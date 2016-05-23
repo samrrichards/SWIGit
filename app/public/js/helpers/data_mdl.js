@@ -4,10 +4,6 @@ angular.module('swigit.data_mdl', [])
 
   .factory('data_fac',['$http','auth_fac',function($http,auth_fac) {
 
-    // http requests with params object, returns promise
-    const GET = (params) => $http({method:'GET', url:'/_api/posts', data:params});
-    const POST = (params) => $http({method:'POST', url:'/_api/posts', data:params});
-
 // 'db' structure example:
 // --->
     // const db = {
@@ -20,7 +16,11 @@ angular.module('swigit.data_mdl', [])
     //     data: { feed: postArray, hash: postIndexByUrlSlug }
     //   }
     // };
-    const db = {};
+    const db = {}; 
+
+    // http requests with params object, returns promise
+    const GET = (params) => $http({method:'GET', url:'/_api/posts', data:params});
+    const POST = (params) => $http({method:'POST', url:'/_api/posts', data:params});
 
     /**
      * [ 'Feed' constructor, accepts data from server and indexes

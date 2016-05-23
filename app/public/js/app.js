@@ -41,9 +41,9 @@ angular.module('swigit', [
             templateUrl: '/templates/post_feed_tmpl.html',
             resolve: {
               feed_data: ['$stateParams','data_fac',function($stateParams,data_fac) {
-                // resolve fetch before render
+                // resolve fetch before render to avoid dom flicker
                 // return data_fac.get_feed($stateParams);
-                return true;
+                return true; // temp
               }]
             },
             controller: 'post_feed_ctrl'
@@ -53,9 +53,9 @@ angular.module('swigit', [
             templateUrl: '/templates/post_body_tmpl.html',
             resolve: {
               post_data: ['$stateParams','data_fac',function($stateParams,data_fac) {
-                // resolve fetch before render
+                // resolve fetch before render to avoid dom flicker
                 // return data_fac.get_post($stateParams);
-                return true;
+                return true; // temp
               }]
             },
             controller: 'post_body_ctrl'
@@ -86,15 +86,3 @@ angular.module('swigit', [
       // initialize $urlRouter listener AFTER custom listeners
       $urlRouter.listen();
     }]);
-
-
-
-
-
-
-
-
-
-
-
-
