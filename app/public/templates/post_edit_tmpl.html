@@ -4,14 +4,14 @@
 
   <div class="col s12 m10 offset-m1">
     <input-field>
-      <input type="text" ng-model="post.tags" length="75" value="{{post.url_slug}}" class="brown-text text-darken-2" required autofocus/>
+      <input type="text" ng-model="post.title" length="75" value="{{post.title}}" class="brown-text text-darken-2" required autofocus/>
       <label class="brown-text">Title...</label>
     </input-field>
   </div>
 
   <div class="col s12 m10 offset-m1">
     <input-field>
-      <input type="text" ng-model="post.tags" length="75" value="{{post.url_slug}}" class="brown-text text-darken-2"/>
+      <input type="text" ng-model="post.url_slug" length="75" value="{{post.url_slug}}" class="brown-text text-darken-2"/>
       <label class="brown-text">URL-Slug...</label>
     </input-field>
   </div>
@@ -38,11 +38,13 @@
     </a>
     <ul>
       <li><a tooltipped class="btn-floating amber lighten-5"
-        data-position="left" data-delay="90" data-tooltip="PLAN">
+        data-position="left" data-delay="90" data-tooltip="PLAN"
+        ng-click="logParam('Batman!')">
         <i class="material-icons amber-text text-accent-3">schedule</i>
       </a></li>
       <li><a tooltipped class="btn-floating amber lighten-5"
-        data-position="left" data-delay="90" data-tooltip="POST">
+        data-position="left" data-delay="90" data-tooltip="POST"
+        ng-click="make_post({username:'Sam', title:post.title, url_slug:post.url_slug, tags:post.tags, content:post.content})">
         <i class="material-icons amber-text text-accent-3">input</i>
       </a></li>
       <li><a tooltipped class="btn-floating amber lighten-5"

@@ -20,7 +20,7 @@ angular.module('swigit.data_mdl', [])
 
     // http requests with params object, returns promise
     const GET = (params) => $http({method:'GET', url:'/_api/posts', data:params});
-    const POST = (params) => $http({method:'POST', url:'/_api/posts', data:params});
+    const POST = (params) => $http({method:'POST', url:'/_/api/post', data:params});
 
     /**
      * [ 'Feed' constructor, accepts data from server and indexes
@@ -75,9 +75,20 @@ angular.module('swigit.data_mdl', [])
         .catch((err) => ( console.error(err) )); //TODO: consider redirecting to error page
     };
 
+    const make_post = function(params){
+        console.log("Welcome to the make_post function!"); 
+        console.log(params); 
+        POST(params)
+        .then(function(resp){
+            console.log(resp); 
+            console.log("I technically posted something."); 
+        });
+    };
+
     return {
       get_feed: get_feed,
-      get_post: get_post
+      get_post: get_post,
+      make_post:make_post
     };
 
   }]);
