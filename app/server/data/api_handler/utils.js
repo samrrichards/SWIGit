@@ -32,7 +32,6 @@ module.exports = {
 	},
 
 	publish: function(req,res) {
-		console.log(req.body); 
 		const username = req.body.username;
 		const title = req.body.title;
 		const url_slug = title.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'_').replace(/<[^>]+>/gm, '');
