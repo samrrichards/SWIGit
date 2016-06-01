@@ -34,6 +34,17 @@ module.exports = {
 		});
 	},
 
+	/*createMdFile: function(userPath, url_slug, content, res){
+		fs.writeFile(path.join(userPath, url_slug, ".md"), content, function(err){
+			if (err) {
+				console.log(err)
+			}
+			else {
+				res.sendStatus(200);
+			}
+		});
+	}, */
+
 	createToken: function(username, req, res) {
 		var token = jwt.encode({
   		iss: username,

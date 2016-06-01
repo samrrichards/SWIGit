@@ -2,6 +2,7 @@
 // client routing
 
 angular.module('swigit', [
+  'hc.marked',
   'ui.materialize',
   'ui.router',
   'ngAnimate',

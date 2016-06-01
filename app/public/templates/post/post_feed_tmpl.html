@@ -10,7 +10,9 @@
     <div class="post-body">
       <div class="col s12 m10 offset-m1">  
         <div class="brown-text text-darken-2">
-          {{post.content | limitTo: 128 }}
+          <marked> 
+            {{post.content | limitTo: 128 }}
+          </marked> 
         </div>
       </div>
     </div>

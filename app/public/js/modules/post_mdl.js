@@ -22,13 +22,13 @@ angular.module('swigit.post_mdl', [])
         content: 'This is an exerpt'
       },
       {
-        title: 'Fake feed array...',
-        fullname: 'L. M. Welinder',
+        title: 'Test Markdown Post',
+        fullname: 'S.R. Richards',
         username: 'lukas',
         feed: null,
         url_slug: 'random_postname',
         published: 'May 19, 2016',
-        content: 'This is an exerpt'
+        content: 'I *really* hope this works!'
       },
       {
         title: 'Fake feed array...',
@@ -45,14 +45,15 @@ angular.module('swigit.post_mdl', [])
 
   .controller('post_body_ctrl',['$scope',function($scope) {
     $scope.post = {
-        title: 'Fake post body...',
-        fullname: 'L. M. Welinder',
+        title: 'Another Markdown Test',
+        fullname: 'S.R. Richards',
         username: 'lukas',
         feed: null,
         url_slug: 'random_postname',
         published: 'May 19, 2016',
-        content: 'This is an exerpt'
+        content: '#It is official.\nMarkdown is **really** awesome!'
       };
+    $scope.content = $scope.post.content; 
   }]);
 
   
